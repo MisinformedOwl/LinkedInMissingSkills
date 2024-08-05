@@ -1,3 +1,6 @@
+# Currently broken
+Linked in has changed the way they have done things. In the process of fixing.
+
 # LinkedInMissingSkills
 Webscraping application using selenium to find out what skills you are missing.
 
