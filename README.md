@@ -20,3 +20,5 @@ python WhatAmIMissing.py
 ```
 
 And the application will open a webbrowser and go through linked in. Easy.
+
+In the event a captcha appears, the program should stop itself and wait until you hit enter on the console.
