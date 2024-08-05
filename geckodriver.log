@@ -1,0 +1,46 @@
+1722885962210	geckodriver	INFO	Listening on 127.0.0.1:55918
+1722885965271	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\jayth\\AppData\\Local\\Temp\\rust_mozprofilemSfVLs"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1722885965871	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1722885966497	Marionette	INFO	Listening on port 55931
+Read port: 55931
+1722885966700	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.linkedin.com/jobs/, line 4: TypeError: _0x19de2c is undefined
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Error: POST request for /homepage-guest/api/ingraphs/gauge has failed with status code 429
+JavaScript error: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Error: POST request for /homepage-guest/api/ingraphs/counter has failed with status code 429
+1722885980148	geckodriver	INFO	Listening on 127.0.0.1:55987
+1722885983165	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\jayth\\AppData\\Local\\Temp\\rust_mozprofilePe5mo0"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1722885983411	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1722885983556	Marionette	INFO	Listening on port 56002
+Read port: 56002
+1722885983667	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/2ai1g5bercxiayftgqw3jq7qe, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/2ai1g5bercxiayftgqw3jq7qe, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Error: POST request for /homepage-guest/api/ingraphs/gauge has failed with status code 429
+JavaScript error: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Error: POST request for /homepage-guest/api/ingraphs/counter has failed with status code 429
+1722886100780	geckodriver	INFO	Listening on 127.0.0.1:56229
+1722886103809	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\jayth\\AppData\\Local\\Temp\\rust_mozprofile1Whgrv"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1722886104166	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1722886104509	Marionette	INFO	Listening on port 56244
+Read port: 56244
+1722886104607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: https://www.linkedin.com/jobs/, line 4: TypeError: _0x19de2c is undefined
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/cum88qvqcplmicoxwhf1nqegj, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/cum88qvqcplmicoxwhf1nqegj, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Error: POST request for /homepage-guest/api/ingraphs/gauge has failed with status code 429
+JavaScript warning: https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti, line 1: Script terminated by timeout at:
+emit@https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti:1:76583
+On@https://static.licdn.com/aero-v1/sc/h/eh08muqvrde4h3hc6koyij5ti:1:76792
+
+1722886108725	Marionette	INFO	Stopped listening on port 56244
+Dynamically enable window occlusion 1

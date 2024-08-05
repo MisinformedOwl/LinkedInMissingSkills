@@ -3,8 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import configparser
 from time import sleep
-import pandas as pd
-import matplotlib.pyplot as plt
+from keyboard import is_pressed as pressed
 
 missing = {}
 
@@ -12,13 +11,28 @@ def AddNewSkills(listOfSkills):
     for l in listOfSkills:
         missing.update({l : missing.get(l, 0)+1})
 
-def clean(search):
+def Login():
+    sleep(1)
+    search = driver.find_element(By.ID, "username")
+    search.send_keys(config["Linkedin details"]["Name"])
+    search = driver.find_element(By.ID, "password")
+    search.send_keys(config["Linkedin details"]["Pass"])
+    search.send_keys(Keys.RETURN)
+    sleep(3)
+    
     try:
-        skills = search.text.replace("and ", "")
-        skills = skills.split(", ")
-        AddNewSkills(skills)
+        search = driver.find_element(By.XPATH, "//a[starts-with(@id, 'ember')]")
+        print("No captcha")
     except Exception:
-        print("There was an error")
+        input("Waiting for clearance")
+    
+    return driver
+
+def clean(search):
+    skills = search.text[search.text.rfind("\n")+2:]
+    skills = skills.replace("and ", "")
+    skills = skills.split(", ")
+    AddNewSkills(skills)
 
 #%% Config
 config = configparser.RawConfigParser()
@@ -27,42 +41,17 @@ config.read("config.ini")
 #%% Driver
 
 driver = wd.Firefox()
-driver.get("https://www.linkedin.com/jobs/")
-search = driver.find_element(By.LINK_TEXT, "Go to your feed")
-search.send_keys(Keys.RETURN)
+driver.get("https://www.linkedin.com/login")
+
+driver = Login()
+
 driver.maximize_window()
 
-sleep(1)
-
-search = driver.find_element(By.LINK_TEXT, "Sign in")
-search.send_keys(Keys.RETURN)
-
-sleep(1)
-search = driver.find_element(By.ID, "username")
-search.send_keys(config["Linkedin details"]["Name"])
-search = driver.find_element(By.ID, "password")
-search.send_keys(config["Linkedin details"]["Pass"])
-search.send_keys(Keys.RETURN)
-
 sleep(2)
 
-driver.get("https://www.linkedin.com/jobs/")
-
+driver.get("https://www.linkedin.com/jobs/collections/recommended/")
 
 sleep(3)
-
-try:
-    search = driver.find_element(By.ID, "recentSearchesIndex__0")
-    search.click()
-    print("No captcha")
-except Exception:
-    input("Waiting for clearance")
-    driver.get("https://www.linkedin.com/jobs/")
-    sleep(3)
-    search = driver.find_element(By.ID, "recentSearchesIndex__0")
-    search.click()
-
-sleep(2)
 
 page = 1
 
@@ -74,26 +63,31 @@ while True:
     for s in range(ammount):
         scrollbar[s].click()
         
-        sleep(0.5)
+        sleep(1.4)
         
         try:
-            driver.find_element(By.XPATH, "//a[@class='app-aware-link ' and @href='#HYM']").click()
-            sleep(0.2)
-            search = driver.find_elements(By.XPATH, "//div[@class='pt5']/div[@class='job-details-how-you-match__skills-item-wrapper display-flex flex-row pt4'][1]/div[@class='display-flex flex-column overflow-hidden']/a[starts-with(@class, 'app-aware')]")
-            clean(search[1])
+            search = driver.find_element(By.XPATH, "//a[@class='app-aware-link ' and @href='#HYM']")
+            search.click()
+            sleep(1)
+            search = driver.find_element(By.XPATH, "//div[@class='pt5']/div[@class='job-details-how-you-match__skills-item-wrapper display-flex flex-row pt4'][2]")
+            clean(search)
         except IndexError:
             if (len(search) > 0):
                 clean(search[0])
                 continue
-            print(f"Job has no skills displayed {s}")
-            print(search)
         except Exception:
-            continue
+            print(f"Job has no skills displayed {s}")
         
-        sleep(0.1)
+        if pressed("q"):
+            break
+        sleep(0.6)
+    
+    if pressed("q"):
+        break
+    
     
     try:
-        driver.find_element(By.XPATH, f"//ul[@class='artdeco-pagination__pages artdeco-pagination__pages--number']/li[@data-test-pagination-page-btn='{page}']").click()
+        driver.find_element(By.XPATH, f"//button[@class='jobs-search-pagination__indicator-button ' and @aria-label='Page {page}']").click()
     except Exception:
         driver.find_element(By.XPATH, "//button[@aria-label='Page 9']").click()
     
