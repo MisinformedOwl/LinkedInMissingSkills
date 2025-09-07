@@ -1,6 +1,8 @@
 # Currently broken
 Linked in has changed the way they have done things. In the process of fixing.
 
+For the updated version please go to: [Just-It-Portfolio](https://github.com/MisinformedOwl/Just-IT-Portfolio)
+
 # LinkedInMissingSkills
 Webscraping application using selenium to find out what skills you are missing.
 
